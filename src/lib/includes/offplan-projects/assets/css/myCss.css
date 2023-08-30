@@ -1,0 +1,390 @@
+/* =================================== Common Start =================================== */
+
+    /* Theme */
+    :root{
+        --t-color:48,88,148;
+        --Drvn-linkcolor: #4ec0b0;
+    }
+    .t--color{
+        color:rgb(var(--t-color))
+    }
+    a.t--color:hover{
+        color:rgb(var(--t-color))
+    }
+    .t--bg{
+        color:#fff;
+        background-color:rgb(var(--t-color))
+    }
+    .t--btn{
+        position:relative;
+        color:#fff;
+        background-color:rgb(var(--t-color))
+    }
+    .t--btn{
+        color:#fff;
+        background-color:rgb(var(--t-color));
+        border-color:rgb(var(--t-color))
+    }
+    .t--btn span{
+        position:relative;
+        z-index:1
+    }
+    .t--btn:hover{
+        color:#fff
+    }
+    .t--btn:before{
+        content:"";
+        position:absolute;
+        left:0;
+        top:0;
+        width:100%;
+        height:100%;
+        opacity:0;
+        border-radius:.5rem;
+        background-color:#000;
+        transition:opacity .3s ease
+    }
+    .t--btn.rounded-lg:before{
+        border-radius:3rem
+    }
+    .t--btn:hover:before{
+        opacity:.15
+    }
+    .t--btn-outline{
+        color:rgb(var(--t-color));
+        background-color:transparent;
+        border-color:rgb(var(--t-color))
+    }
+    .t--btn-outline:hover{
+        color:#fff;
+        background-color:rgb(var(--t-color));
+        border-color:rgb(var(--t-color))
+    }
+    .concept-theme .t--btn-outline:hover{
+        color:rgb(var(--t-color))
+    }
+    .t--bg .btn-swiper{
+        border-color:#fff;
+        color:#fff
+    }
+    .t--bg .btn-swiper:hover{
+        background-color:#fff;
+        color:rgb(var(--t-color));
+        border-color:#fff
+    }
+    .stance-number{
+        background-color:rgba(var(--t-color),0.7)
+    }
+    .stance-number.active:before{
+        background-color:rgba(var(--t-color),0.4)
+    }
+    .stance-number.active:after{
+        background-color:rgba(var(--t-color),0.2)
+    }
+    .stance-number.active span{
+        color:#fff;
+        background-color:rgba(var(--t-color),1)
+    }
+    .all-project.t--theme:before{
+        background-color:rgb(var(--t-color))
+    }
+    .theme--project .select-custom__trigger-more{
+        border-color:rgb(var(--t-color))
+    }
+    .theme--project .link-border:before{
+        background-color:rgb(var(--t-color))
+    }
+    .t--theme::selection{
+        color:#fff;
+        background-color:rgb(var(--t-color))
+    }
+    .t--theme::-moz-selection{
+        color:#fff;
+        background-color:rgb(var(--t-color))
+    }
+    .parsley-errors-list {
+        list-style: none;
+        padding-left: 0;
+        color: #c00;
+        margin-bottom: 0;
+        width: 100%;
+    }
+    .parsley-errors-list li {
+        margin: 0.5rem;
+        font-size: 14px;
+    }
+    .iti-mobile .intl-tel-input.iti-container {
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: fixed;
+        z-index:999999;
+    }
+
+    ::-webkit-scrollbar{width: 1px !important; height: 1px !important;}
+
+    .opacity-2 { opacity: .2; }
+    .bolder { font-weight: 800!important; }
+    .uppercase { text-transform: uppercase!important; }
+    .display-2 { font-size: 4rem; font-weight: 600; line-height: 1.2; }
+    .bold { font-weight: 600!important; }
+    .rounded-lg { border-radius: 3rem!important; }
+    .btn-block{ width:100% }
+    .btn-block:hover{background-color:rgb(var(--t-color));}
+    .btn-block+.btn-block{ margin-top:.5rem }
+    input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"].btn-block{ width:100% }
+
+    .btn-primary {
+        color: #fff;
+        background-color: #002e43;
+        border-color: #002e43;
+        box-shadow: none;
+    }
+
+    .DLPFonts{
+        font-family:"Raleway",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+        color:#bababa;
+    }
+
+    @media only screen and (max-width: 768px) {
+        html, body{ overflow-x:inherit !important;}
+        .display-2{font-size: 2rem;}
+        .Mgaps{margin-bottom: 15px;}
+    }
+
+/* =================================== Common End =================================== */
+
+/* =================================== BannerHero Start =================================== */
+
+#BannerHero {
+    height: 100vh; position: relative; background-color: #000; opacity: 1;
+}
+
+#BannerHero .swiper-container {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}    
+
+#BannerHero .swiper-container .image-container {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    transition: 20s ease-out;
+    transform: scale(1.2);
+}
+#BannerHero .swiper-container .swiper-slide.swiper-slide-active .image-container {
+    transform: scale(1);
+    
+}
+
+@-webkit-keyframes zoom-a {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+@-moz-keyframes zoom-a {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+@-o-keyframes zoom-a {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+@keyframes zoom-a {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.2); }
+}
+.type-a {
+    -webkit-animation: zoom-a 20s linear infinite alternate; /* Safari 4+ */
+    -moz-animation:    zoom-a 20s linear infinite alternate; /* Fx 5+ */
+    -o-animation:      zoom-a 20s linear infinite alternate; /* Opera 12+ */
+    animation:         zoom-a 20s linear infinite alternate; /* IE 10+, Fx 29+ */
+}
+
+/* =================================== BannerHero End =================================== */
+
+/* =================================== projectConcept End =================================== */
+
+#projectConcept{padding: 0 0 0 0;}
+
+/* #projectConcept .swiper-button-next, .swiper-button-prev{
+    
+    top:70%; position: absolute; width: 3rem; height: 3rem; margin-top: -1.5rem; z-index: 10; cursor: pointer; 
+    color: #002e43; display: inline-flex; align-items: center; justify-content: center; 
+    background-color: transparent; border: 1px solid #002e43; border-radius: 50%; 
+} */
+
+/* #projectConcept .swiper-button-next:hover, .swiper-button-prev:hover{
+    background-color: #fff!important; border-color: #fff!important; color: #126dba !important;
+}
+
+#projectConcept .swiper-button-next:after, .swiper-button-prev:after{ font-size: 1rem !important; color: #002e43;}
+
+#projectConcept .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled{ 
+    opacity:1; background-color: #fff; border: 1px solid #fff;  
+}
+
+#projectConcept .swiper-button-prev, .swiper-container-rtl .swiper-button-next{ left:50%;}
+#projectConcept .swiper-button-next, .swiper-rtl .swiper-button-prev{ right:42%;} */
+
+@media only screen and (max-width: 768px) {
+
+    #projectConcept .swiper-button-next, .swiper-button-prev{top:90%;}
+    #projectConcept .swiper-button-prev, .swiper-container-rtl .swiper-button-next{ left:15%;}
+    #projectConcept .swiper-button-next, .swiper-rtl .swiper-button-prev{ right:55%;}
+    .project-concept .concept-item__content{padding: 1rem 1rem 5rem 1rem;}
+}
+
+/* =================================== projectConcept End =================================== */
+
+/* =================================== mapLocation Start =================================== */
+    
+    #mapLocation{ padding: 0 0 0 0;}
+    #mapLocation .block {padding: 0;}
+    #mapLocation .t--color { color: rgb(var(--t-color)); }
+    .title-sub { font-size: 3rem; font-weight: 800 !important;}
+
+    @media only screen and (max-width: 768px) { }
+    
+/* =================================== mapLocation End =================================== */
+
+/* =================================== imgGallery Start =================================== */
+
+    #imgGallery{}
+
+    @media only screen and (max-width: 768px) { }
+
+/* =================================== imgGallery End =================================== */
+
+/* =================================== ctAction Start =================================== */
+
+    #ctaction{ padding: 0;}
+
+    @media only screen and (max-width: 768px) { }
+
+/* =================================== ctAction End =================================== */
+
+/* =================================== Sfc Start =================================== */
+
+    #Sfc{}
+
+    @media only screen and (max-width: 768px) { }
+
+/* =================================== Sfc End =================================== */
+
+/* =================================== MasterPlan Start =================================== */
+
+    #MasterPlan{}
+
+    @media only screen and (max-width: 768px) { }
+
+/* =================================== MasterPlan End =================================== */
+
+/* =================================== MasterPlan Start =================================== */
+
+    #FlatPlan{padding: 0;}
+    
+    @media only screen and (max-width: 768px) { }
+
+/* =================================== MasterPlan End =================================== */
+
+/* =================================== ProjectContactUs Start =================================== */
+
+    #ProjectContactUs{ padding: 0 0 60px 0;}
+    
+    #ProjectContactUs .btn {height: 54px !important;}
+    #ProjectContactUs .home-contact__phone{font-size: 3rem;}
+    
+    @media only screen and (max-width: 768px) { 
+        #ProjectContactUs .btn {line-height: 34px; font-size: 1.2rem;}
+    }
+
+/* =================================== ProjectContactUs End =================================== */
+
+/*
+@font-face { font-family: felix; src: url(../fonts/Felix-Titling-MT.ttf); }
+* { font-family: felix; }
+*/
+
+/*Header Section */
+.navbar-brand__logo{ width:160px; height:36px; }
+.navbar-nav .nav-link{ font-size:0.85rem; font-weight: 600;}
+.fixed-message{
+    display: inline-flex; flex-direction: column; position: absolute; top: 35%; transform: translateY(-50%); 
+    padding: 0; color: #fff; height: 7.5rem; overflow: hidden;
+}
+.navbar-expand-xl .navbar-nav .nav-link{ padding-right: 0.8rem !important;}
+.main-lang__link{font-weight: 600 !important;}
+#MYticker .card{background-color:inherit; border-radius: 0; border:none;}
+#MYticker .card-footer{ padding: 0; border:none;}
+/* Concept Section */
+.project-concept .concept-item__direction{bottom:5rem;}
+
+/* Why Dubai*/
+.opt1{font-size:70% !important;}
+/* Social Facility Section */
+.sfdirection{ position: relative; top: 15px; }
+
+/*Footer Section*/
+.mmg-logo img{max-width: 30px;}
+
+/* Image Gallery Section */
+.block-gallery .swiper-wrapper{ align-items: center; justify-content: center;}
+/* Image Gallery Section End */
+
+/*WhatsApp */
+.whatsapp-ico{
+    fill: white;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #4dc247;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
+    position: fixed;
+    bottom: 3px;
+    right : 210px;
+    z-index: 10;
+}
+.whatsapp-ico-frm{
+    fill: white;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #4dc247;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
+    position: relative;
+    top: 158px;
+    left : 253px;
+    z-index: 10;   
+}
+.whatsapp-ico:hover,.whatsapp-ico-frm:hover{
+    box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
+}
+
+/* Media Query Section */
+@media only screen and (max-width: 768px) {
+
+    /*Header Section Mobile*/
+    .header{padding:0;}
+    .navbar-brand__logo{width:100px; height:24px;}
+    .main-lang{position: absolute; bottom: 320px;}
+    /* Concept Section */
+    .project-concept .concept-item__direction{bottom:2rem;}
+    .btn{ font-size: 0.8rem;}
+    .fancybox-slide:before{ height:auto;}
+    .whatsapp-ico{
+        right:10px !important; bottom:20px !important;
+    }
+    .whatsapp-ico-frm{
+        width: 40px !important; height: 40px !important; 
+        top: 0px !important; left : 0px !important;
+    }
+}

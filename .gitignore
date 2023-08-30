@@ -1,0 +1,18 @@
+.DS_Store
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+/nbproject/private/
+src/lib/includes/sales/markers.svelte
+src/lib/includes/sales/markers.svelte
+src/lib/includes/sales/markers.svelte
+client.mjs
+<<<<<<< HEAD
+src/base-url.js
+=======
+src/base-url.js
+>>>>>>> 06b7b1919de24ebe77b94c062cdade17369e200f

@@ -1,0 +1,405 @@
+<script>
+    import { onMount } from 'svelte';
+    import mapboxgl from 'mapbox-gl';
+    
+    //import 'normalize.css/normalize.css'
+    import 'mapbox-gl/dist/mapbox-gl.css'
+    
+    import {covertToIntCurrancy, CurrancySBC} from '$lib/includes/others';
+  
+    import Apartmentslist from './apartmentslist.svelte';
+  
+    export let data=[];
+    export let updateFunction;
+  
+    export let boundingBox = {
+        "_sw": {
+            "lng": 55.064511502076556,
+            "lat": 25.004448664717486
+        },
+        "_ne": {
+            "lng": 55.21608849792656,
+            "lat": 25.15650411973199
+        }
+    };
+    
+    let obj = {};
+    let MyObj = {};
+    let tempData = [];
+    let stores;
+
+    let geojson = null;
+    let MapContent=[];
+    
+    let Blackpopup; 
+    
+    onMount(async () => {
+  
+        //55.181215,25.013484
+        let lat = 25.013484;
+        let lng = 55.181215;
+        
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZHJpdmVubWFwYm94IiwiYSI6ImNsNjBpaDJoajE4bGgzZm9hYzh4amlhOTEifQ.2X7wHieXqxadrO16pnLl6g';
+        const map = new mapboxgl.Map({
+            container: 'mapView',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [lng,lat],
+            //maxZoom: 5,
+            minZoom: 6,
+            zoom: 8
+        });
+  
+        boundingBox = map.getBounds();
+        //console.log(map.getBounds()); 
+
+        const getRandomInt = (max)=>{
+
+            let value =  Math.floor(Math.random() * max);
+            return Number.parseInt(value);
+            
+        };
+        // End getRandomInt
+
+        const generateRandomDecimalInRangeFormatted = (min, max, places)=>{
+
+            let value = Math.random() * (max - min) + min;
+            return Number.parseFloat(value).toFixed(places);
+
+        };
+        // End generateRandomDecimalInRangeFormatted
+
+        const BigpopupUpsClosed = ()=>{
+
+            const BigpopupUps = document.getElementsByClassName('white-popup');
+            if (BigpopupUps[0]) BigpopupUps[0].remove();
+
+        };
+        // End BigpopupUpsClosed 
+
+        const pricePoupUpsClosed = ()=>{
+
+            //const pricePoupUps = document.getElementsByClassName('myMapListing');
+            const pricePoupUps = document.getElementsByClassName('myMap-Listing');
+            if (pricePoupUps[0]) pricePoupUps[0].remove();
+
+        };
+        // End pricePoupUpsClosed
+        const btnCallingMap = ()=>{
+
+            let MySerbtn = document.getElementById('mySearch');
+            //console.log(MySerbtn);
+            MySerbtn.addEventListener("click", MybtnClick);
+
+        };
+        // End btnCallingMap
+        
+        const MybtnClick = async()=>{
+
+            boundingBox = map.getBounds();
+            pricePoupUpsClosed(); BigpopupUpsClosed();
+            //console.log(MyMapData(data));
+            updateFunction(boundingBox); //this was active
+
+            let country = "AE";
+            let Community = document.getElementById("SCommunity") ? document.getElementById("SCommunity") : 'Dubai';
+            //console.log(country);
+            //console.log(Community);
+
+            const response = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${Community.value}.json?country=${country}&access_token=${mapboxgl.accessToken}`);
+            const Mapdata = await response.json();
+            MapContent = Mapdata;
+            //getSignlegeocoding API End
+            
+            //console.log(response);
+            console.log(MapContent.features);
+            console.log(MapContent.features[0].geometry.coordinates);
+            //Search by : matching_text, matching_place_name, place_name, text
+            console.log(MapContent.features[0].matching_text, MapContent.features[0].matching_place_name, MapContent.features[0].place_name, MapContent.features[0].text);
+
+            //map.zoomTo(generateRandomDecimalInRangeFormatted(11,15,1), { duration: 700, offset:MapContent.features[0].geometry.coordinates });            
+            map.flyTo({
+                
+                //center: MapContent.features[0].geometry.coordinates ? MapContent.features[0].geometry.coordinates : [lng,lat],
+                //zoom: generateRandomDecimalInRangeFormatted(13,10.5,1),
+                // speed:1000
+                center: MapContent.features[0].geometry.coordinates,
+                zoom: 15,
+                speed: generateRandomDecimalInRangeFormatted(0.9, 0.3, 1),
+                duration: getRandomInt(2500),
+                bearing: getRandomInt(30),
+                pitch: getRandomInt(30),
+            });
+        };
+        // End MybtnClick
+        
+        map.on('load', () => {
+            
+            map.on('resize', () => {
+                
+                MyMapData(data);
+                //boundingBox = map.getBounds();
+
+                //pricePoupUpsClosed(); BigpopupUpsClosed();                
+                //updateFunction(boundingBox); //this was active
+                
+                //console.log('map resized');
+                //console.log(JSON.stringify(boundingBox));
+            });
+            // End Resize
+            
+            map.on('movestart', (e) => {
+  
+                //map.setFilter('airport', ['has', 'description']);
+                MyMapData(data);
+                //boundingBox = map.getBounds();
+
+                //pricePoupUpsClosed(); BigpopupUpsClosed();
+                //updateFunction(boundingBox); //this was active
+                
+                //console.log('Move Start');
+                //console.log(JSON.stringify(boundingBox));
+  
+            });
+            // End  Move Start
+            
+            map.on('moveend', () => {
+
+                pricePoupUpsClosed();
+                boundingBox = map.getBounds();
+                updateFunction(boundingBox); //this was active
+  
+                //console.log('Move End');
+                //console.log(JSON.stringify(boundingBox));
+            });
+            // End Move End        
+  
+            map.on('mousemove',(e)=>{
+                
+                // pricePoupUpsClosed(); BigpopupUpsClosed();
+                // boundingBox = map.getBounds();
+                // updateFunction(boundingBox); //this was active
+                
+                //console.log("Mouse Move Event");
+                //console.log(JSON.stringify(boundingBox));
+            });
+            // End Mouse Move
+  
+            map.on('mouseover', (e) => {
+
+                pricePoupUpsClosed();
+                //MyMapData(data);
+                boundingBox = map.getBounds();
+                updateFunction(boundingBox); //this was active
+                
+            });
+            // End Mouse Over
+
+            map.on('mouseleave', (e) => {
+                
+                boundingBox = map.getBounds();
+                
+                //pricePoupUpsClosed(); BigpopupUpsClosed();
+                //updateFunction(boundingBox); //this was active
+
+                //console.log('Mouse Leave Event')
+                //console.log(JSON.stringify(boundingBox));
+            });
+            // End Mouse Leave
+            
+
+            btnCallingMap();
+            MyMapData(data);
+
+            map.zoomTo(10, { duration: 700 });
+            map.addControl(new mapboxgl.NavigationControl());
+            map.addControl(new mapboxgl.FullscreenControl());
+            
+        });
+        // End load
+
+        /*
+        let lastZoom = map.getZoom();
+        map.on('zoom', () => {
+            const currentZoom = map.getZoom();
+            if (currentZoom > lastZoom) {
+                // zoom in
+                //MyMapData(data);
+                boundingBox = map.getBounds();
+
+                pricePoupUpsClosed(); BigpopupUpsClosed();
+                updateFunction(boundingBox); //this was active                
+            } else {
+                // zoom out
+                //MyMapData(data);
+                boundingBox = map.getBounds();
+
+                pricePoupUpsClosed(); BigpopupUpsClosed();
+                updateFunction(boundingBox); //this was active
+            }
+
+            lastZoom = currentZoom;
+            //console.log(lastZoom);
+        });
+        // lastZoom End
+        */
+
+        const myBigPopup = (geojson, id)=>{
+            
+            const Bigpopup = new mapboxgl.Popup({ className: "white-popup", maxWidth:300, closeButton: true, closeOnClick: true });
+            BigpopupUpsClosed();
+
+            geojson.features.forEach(function (bigPopupmarker) {
+
+                if(bigPopupmarker.properties.active === 'Yes' && bigPopupmarker.properties.ID === id  ){
+                    // Bigpopup
+                    // .setLngLat(bigPopupmarker.geometry.coordinates)
+                    // .setHTML(`${bigPopupmarker.properties.description}`)
+                    // .addTo(map);
+
+                    const coordinates = bigPopupmarker.geometry.coordinates.slice();
+                    const description = `
+                        <div class="container g-0">
+                            <a href="/${(bigPopupmarker.properties.Emirate).toLowerCase()}/${(bigPopupmarker.properties.UnitType).toLowerCase()}-for-${(bigPopupmarker.properties.PropertyStatus).toLowerCase()}/${((bigPopupmarker.properties.AlCommunity).toLowerCase()).replaceAll(' ','-')}/${((bigPopupmarker.properties.PropertyNm).toLowerCase()).replaceAll(' ','-')}/${(bigPopupmarker.properties.RefNo).toLowerCase()}">
+                                <div class="row g-0">
+                                    <div class="col-12 mb-2">
+                                        <img src=${bigPopupmarker.properties.Image.image[0]} class="img-fluid myImgPopup"/>
+                                    </div>
+                                    <div class="col-sm-12 px-2 mb-2">
+                                        <h6>${bigPopupmarker.properties.PropertyName}</h6>
+
+                                        <div class="d-flex flex-row bd-highlight mb-1">
+                                            <div class="p-2 bd-highlight">${bigPopupmarker.properties.UnitType}</div>
+                                            
+                                            <div class="p-2 bd-highlight"><i class="bx bx-building-house"></i></div>
+                                            <div class="p-2 bd-highlight">${bigPopupmarker.properties.BedRooms} Beds</div>
+                                            <div class="p-2 bd-highlight"><i class="bx bx-building-house"></i></div>
+                                            <div class="p-2 bd-highlight">${bigPopupmarker.properties.BathRooms} Bath</div>
+                                        </div>
+
+                                        <h6>${bigPopupmarker.properties.price} USD</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    `;
+                    
+                    if (!Bigpopup.isOpen()) {
+
+                        map.flyTo({ center: coordinates});
+                        
+                        Bigpopup
+                        .setLngLat(coordinates)
+                        .setHTML(description)
+                        //.setOffset(10)
+                        .addTo(map);
+
+                    } 
+
+                }
+
+            });
+            //console.log(geojson.features[0].geometry.coordinates.slice());
+
+        };
+        // End myBigPopup
+        
+        const add_markers = (geojson)=>{            
+
+            geojson.features.forEach(function (marker) {
+
+                //if(marker.properties.active == 'Yes' && marker.properties.price >= 90000 ){
+                if(marker.properties.active === 'Yes'){
+                    
+                    var el = document.createElement('span');
+
+                    const Pricepopu = new mapboxgl.Popup({ className: "myMap-Listing", closeButton: false, closeOnClick: true  })
+                    .setLngLat(marker.geometry.coordinates)
+                    .setHTML(`${marker.properties.description}`)
+                    .addTo(map);
+
+                    //console.log(link);
+                    Pricepopu.getElement().addEventListener('click', (e)=>{ 
+                        
+                        //console.log(e); 
+                        //console.log(e.path[0].id); 
+                        //console.log(e.target.id);
+                        
+                        if(e.target.id === marker.properties.ID){
+                            //console.log(marker.properties.ID, e.path[0].id)
+                            //popup.addClassName('.black-popup');
+                            myBigPopup(geojson, e.target.id);
+                        }
+                    });
+
+                }
+
+                boundingBox = map.getBounds();
+                //updateFunction(boundingBox); //this was active
+                //console.log(marker)
+                //const popup = new mapboxgl.Popup().addTo(map); popup.remove(map);                
+
+            });
+        };
+        // End add_markers
+
+        let MyMapData =(data)=>{
+
+            let length = (data.length);
+            for(let d=0; d<length; d++){
+                geojson = {
+                    'type': 'FeatureCollection',
+                    'features': [{
+                        'type': 'Feature',
+                        'properties': {
+                            'description': `<strong id="${data[d].objectID}" >${covertToIntCurrancy(data[d].Price  *.27)} USD</strong>`,
+                            'active': `${data[d].Published}`,
+                            'price': `${CurrancySBC(data[d].Price *.27)}`,
+                            'ID': data[d].objectID,
+                            'Image': data[d].Images,
+                            'UnitType':`${ data[d].Unit_Type}`,
+                            'BedRooms':`${ data[d].Bedrooms}`,
+                            'BathRooms':`${ data[d].No_of_Bathroom}`,
+                            'PropertyName': `${data[d].Property_Name} | ${data[d].Property_Title}`,
+                            'Community': `${data[d].Community}`,
+                            'Emirate': data[d].Emirate,
+                            'PropertyStatus':data[d].Ad_Type,
+                            'PropertyNm':data[d].Property_Name,
+                            'RefNo':data[d].Property_Ref_No,
+                            'AlCommunity': `${data[d].Community} ${data[d].Sub_Community}`,
+                        },
+                        'geometry': {
+                            'type': 'Point',
+                            'coordinates': [data[d].Longitude,data[d].Latitude]
+                        }
+                    }]
+                }
+                
+                add_markers(geojson);
+            }
+            //Load End
+            //const popup = new mapboxgl.Popup().addTo(map); popup.remove(map);            
+            
+        };
+        // End MyMapData
+              
+    });
+    //End onMount
+    
+  </script>
+  
+  
+  <div class="col-lg-6 mt-5">
+    <div class="apartment-sale-right">        
+        <a class="map-expend" style="z-index:99" href="/"><i class="fa fa-arrows-alt" aria-hidden="true"></i></a>
+        <a class="map-return" style="z-index:199" href="/"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+        <div id="mapView" class="myMapListing" allowfullscreen="true" loading="lazy"></div>
+    </div>    
+  </div>
+  
+  <style>
+.myMapListing { position:relative; height: 635px; width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    .myMapListing{ top:70px; }
+}
+  </style>

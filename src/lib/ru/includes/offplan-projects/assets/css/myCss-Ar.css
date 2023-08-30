@@ -1,0 +1,190 @@
+/*
+    @font-face { font-family: felix; src: url(../fonts/Felix-Titling-MT.ttf); }
+    * { font-family: felix; }
+*/
+
+/* Arabic Fonts */
+
+@font-face {
+	font-family: 'GESSTextLight-Light';
+	src: url('../fonts/ar/gesstextlight-light.eot');
+	src: url('../fonts/ar/gesstextlight-light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ar/gesstextlight-light.woff2') format('woff2'),
+		url('../fonts/ar/gesstextlight-light.woff') format('woff'),
+		url('../fonts/ar/gesstextlight-light.ttf') format('truetype'),
+		url('../fonts/ar/gesstextlight-light.svg#gesstextlight-light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GESSUniqueBold-Bold';
+	src: url('../fonts/ar/gessuniquebold-bold.eot');
+	src: url('../fonts/ar/gessuniquebold-bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ar/gessuniquebold-bold.woff2') format('woff2'),
+		url('../fonts/ar/gessuniquebold-bold.woff') format('woff'),
+		url('../fonts/ar/gessuniquebold-bold.ttf') format('truetype'),
+		url('../fonts/ar/gessuniquebold-bold.svg#gessuniquebold-bold') format('svg');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GESSTwoMedium-Medium';
+	src: url('../fonts/ar/gesstwomedium-medium.eot');
+	src: url('../fonts/ar/gesstwomedium-medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ar/gesstwomedium-medium.woff2') format('woff2'),
+		url('../fonts/ar/gesstwomedium-medium.woff') format('woff'),
+		url('../fonts/ar/gesstwomedium-medium.ttf') format('truetype'),
+		url('../fonts/ar/gesstwomedium-medium.svg#gesstwomedium-medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GESSTwoLight-Light';
+	src: url('../fonts/ar/gesstwolight-light.eot');
+	src: url('../fonts/ar/gesstwolight-light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ar/gesstwolight-light.woff2') format('woff2'),
+		url('../fonts/ar/gesstwolight-light.woff') format('woff'),
+		url('../fonts/ar/gesstwolight-light.ttf') format('truetype'),
+		url('../fonts/ar/gesstwolight-light.svg#gesstwolight-light') format('svg');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'GESSTextMedium-Medium';
+	src: url('../fonts/ar/gesstextmedium-medium.eot');
+	src: url('../fonts/ar/gesstextmedium-medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/ar/gesstextmedium-medium.woff2') format('woff2'),
+		url('../fonts/ar/gesstextmedium-medium.woff') format('woff'),
+		url('../fonts/ar/gesstextmedium-medium.ttf') format('truetype'),
+		url('../fonts/ar/gesstextmedium-medium.svg#gesstextmedium-medium') format('svg');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face{font-family:'ADP';
+    src:url(../fonts/ar/adp-light.woff) format("woff"),
+    url(../fonts/ar/adp-light.ttf) format("truetype");
+    font-weight:300;font-style:normal}
+
+@font-face{font-family:'ADP';
+    src:url(../fonts/ar/adp-black.woff) format("woff"),
+    url(../fonts/ar/adp-black.ttf) format("truetype");
+    font-weight:700;font-style:normal}
+
+@font-face{font-family:'ADP';
+    src:url(../fonts/ar/adp-bold.woff) format("woff"),
+    url(../fonts/ar/adp-bold.ttf) format("truetype");
+    font-weight:700;font-style:normal}
+
+@font-face{font-family:'ADP';
+    src:url(../fonts/ar/adp-regular.eot);
+    src:url(../fonts/ar/adp-regular.eot?#iefix) format("embedded-opentype"),
+    url(../fonts/ar/adp-regular.woff) format("woff"),
+    url(../fonts/ar/adp-regular.ttf) format("truetype");
+    font-weight:500;font-style:normal}
+
+
+/* Fonts and RTL Text Alignment*/
+body{font-family:'ADP'!important;text-align:right!important;direction:rtl;letter-spacing:0!important}
+.headline{font-family:'ADP'!important;}
+
+/*Sliders RTL BUTTONs*/
+.swiper-button-next, .swiper-container-rtl .swiper-button-prev{right:inherit; }
+
+/* Lead Form */
+.form-control-line{ direction:rtl;}
+.quick-contact__text, h4, .h4{ max-width:none; text-align:right; }
+
+ /*Header Section */
+ .fixed-contact{left:2%; right:inherit;}
+ .menu--open .navbar-collapse{ direction: rtl; text-align: right;}
+ .menu--open .navbar-nav .dropdown .nav-link:after{ right:100%; left:0% !important;}
+ .menu--open .main-lang{margin-right:3%; margin-left: 0% !important;}
+ .dropdown-menu{ right: 0% !important;}
+ .navbar-toggler{ margin-left: 0 !important; margin-right: 1.5rem !important;}
+ .menu--open .navbar-nav .nav-link{ width: 25rem !important;}
+ .ml-3, .mx-3{ margin-left: 0 !important; margin-right: 2rem !important;}
+ .navbar-brand__logo{ width:160px; height:36px; }
+ .navbar-nav .nav-link{ font-size:0.85rem; font-weight: 600;}
+ .fixed-message{
+     display: inline-flex; flex-direction: column; position: absolute; top: 35%; transform: translateY(-50%); 
+     padding: 0; color: #fff; height: 7.5rem; overflow: hidden;
+ }
+ .navbar-expand-xl .navbar-nav .nav-link{ padding-right: 0.8rem !important;}
+ .main-lang__link{font-weight: 600 !important;}
+ #MYticker .card{background-color:inherit; border-radius: 0; border:none;}
+ #MYticker .card-footer{ padding: 0; border:none;}
+ /* Concept Section */
+ .project-concept .concept-item__direction{bottom:5rem;}
+ 
+ /* Why Dubai*/
+ .opt1{font-size:70% !important;}
+ /* Social Facility Section */
+ .sfdirection{ position: relative; top: 15px; }
+ 
+ /*Footer Section*/
+ .mmg-logo img{max-width: 30px;}
+ 
+ /* Image Gallery Section */
+ .block-gallery .swiper-wrapper{ align-items: center; justify-content: center;}
+ /* Image Gallery Section End */
+
+ 
+ /* Media Query Section */
+ @media only screen and (max-width: 768px) {
+
+    /*Header Section Mobile*/
+    .header{padding:0;}
+    .navbar-brand__logo{width:100px; height:24px;}
+    .fixed-contact{left:2%; right:inherit;}
+    .menu--open .main-lang{margin-right:13%; position: absolute; bottom: 320px;}
+    .lets-you__item{padding-left: 10px;}
+     /* Concept Section */
+    .project-concept .concept-item__direction{bottom:2rem;}
+    .btn{ font-size: 0.8rem;}
+    .fancybox-slide:before{ height:auto;}
+    .whatsapp-ico{
+        left:10px !important; bottom:20px !important;
+    }
+    .whatsapp-ico-frm{
+        width: 40px !important; height: 40px !important; 
+        top: 0px !important; left : 0px !important;
+    }
+ }
+ 
+ /*WhatsApp */
+ .whatsapp-ico{
+    fill: white;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #4dc247;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
+    position: fixed;
+    bottom: 3px;
+    left : 210px;
+    z-index: 10;
+}
+.whatsapp-ico-frm{
+    fill: white;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #4dc247;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
+    position: relative;
+    top: 158px;
+    left:253px;
+    z-index: 10;   
+}
+.whatsapp-ico:hover,.whatsapp-ico-frm:hover{
+    box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
+}

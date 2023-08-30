@@ -1,0 +1,84 @@
+/*
+    @font-face { font-family: felix; src: url(../fonts/Felix-Titling-MT.ttf); }
+    * { font-family: felix; }
+*/
+ 
+ /*Header Section */
+ .navbar-brand__logo{ width:160px; height:36px; }
+ .navbar-nav .nav-link{ font-size:0.85rem; font-weight: 600;}
+ .fixed-message{
+     display: inline-flex; flex-direction: column; position: absolute; top: 35%; transform: translateY(-50%); 
+     padding: 0; color: #fff; height: 7.5rem; overflow: hidden;
+ }
+ .navbar-expand-xl .navbar-nav .nav-link{ padding-right: 0.8rem !important;}
+ .main-lang__link{font-weight: 600 !important;}
+ #MYticker .card{background-color:inherit; border-radius: 0; border:none;}
+ #MYticker .card-footer{ padding: 0; border:none;}
+ /* Concept Section */
+ .project-concept .concept-item__direction{bottom:5rem;}
+ 
+ /* Why Dubai*/
+ .opt1{font-size:70% !important;}
+ /* Social Facility Section */
+ .sfdirection{ position: relative; top: 15px; }
+ 
+ /*Footer Section*/
+ .mmg-logo img{max-width: 30px;}
+ 
+ /* Image Gallery Section */
+ .block-gallery .swiper-wrapper{ align-items: center; justify-content: center;}
+ /* Image Gallery Section End */
+
+ 
+ /* Media Query Section */
+ @media only screen and (max-width: 768px) {
+
+    /*Header Section Mobile*/
+    .header{padding:0;}
+    .navbar-brand__logo{width:100px; height:24px;}
+    .main-lang{position: absolute; bottom: 320px;}
+     /* Concept Section */
+    .project-concept .concept-item__direction{bottom:2rem;}
+    .btn{ font-size: 0.8rem;}
+    .fancybox-slide:before{ height:auto;}
+    .whatsapp-ico{
+        right:10px !important; bottom:20px !important;
+    }
+    .whatsapp-ico-frm{
+        width: 40px !important; height: 40px !important; 
+        top: 0px !important; left : 0px !important;
+    }
+ }
+ 
+ /*WhatsApp */
+ .whatsapp-ico{
+    fill: white;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #4dc247;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
+    position: fixed;
+    bottom: 3px;
+    right : 210px;
+    z-index: 10;
+}
+.whatsapp-ico-frm{
+    fill: white;
+    width: 50px;
+    height: 50px;
+    padding: 3px;
+    background-color: #4dc247;
+    border-radius: 50%;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    /* box-shadow: 2px 2px 11px rgba(0,0,0,0.7); */
+    position: relative;
+    top: 158px;
+    left : 253px;
+    z-index: 10;   
+}
+.whatsapp-ico:hover,.whatsapp-ico-frm:hover{
+    box-shadow: 2px 2px 11px rgba(0,0,0,0.7);
+}
