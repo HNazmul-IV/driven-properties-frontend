@@ -41,7 +41,7 @@
                 <a href="/de/sales/buy-ready-properties/sale-apartments">
                   <div class="icon-box">
                     <div class="sale-rent-pro-container">
-                      <img alt="drvn" src="/assets/images/shutterstock_2052298703.jpg" class="img-fluid w-100 sale-rent-pro-img" />
+                      <img alt="drvn" src="/assets/images/shutterstock_2052298703.webp" class="img-fluid w-100 sale-rent-pro-img" />
                       <div class="sale-rent-pro-title">
                         <h6>APARTMENTS</h6>
                         <div class="sale-rent-row">
@@ -56,7 +56,7 @@
                 <a href="/de/sales/buy-ready-properties/sale-villas">
                   <div class="icon-box">
                     <div class="sale-rent-pro-container">
-                      <img alt="drvn" src="/assets/images/shutterstock_1711133503.jpg" class="img-fluid w-100 sale-rent-pro-img" />
+                      <img alt="drvn" src="/assets/images/shutterstock_1711133503.webp" class="img-fluid w-100 sale-rent-pro-img" />
                       <div class="sale-rent-pro-title">
                         <h6>VILLEN</h6>
                         <div class="sale-rent-row">
@@ -77,7 +77,7 @@
           <a href="/de/sales/buy-ready-properties/sale-apartments">
             <div class="icon-box">
               <div class="sale-rent-pro-container">
-                <img alt="drvn" src="/assets/images/shutterstock_2052298703.jpg" class="img-fluid w-100 sale-rent-pro-img" />
+                <img alt="drvn" src="/assets/images/shutterstock_2052298703.webp" class="img-fluid w-100 sale-rent-pro-img" />
                 <div class="sale-rent-pro-title">
                   <h6>APARTMENTS</h6>
                   <div class="sale-rent-row">
@@ -92,7 +92,7 @@
           <a href="/de/sales/buy-ready-properties/sale-villas">
             <div class="icon-box">
               <div class="sale-rent-pro-container">
-                <img alt="drvn" src="/assets/images/shutterstock_1711133503.jpg" class="img-fluid w-100 sale-rent-pro-img" />
+                <img alt="drvn" src="/assets/images/shutterstock_1711133503.webp" class="img-fluid w-100 sale-rent-pro-img" />
                 <div class="sale-rent-pro-title">
                   <h6>VILLEN</h6>
                   <div class="sale-rent-row">

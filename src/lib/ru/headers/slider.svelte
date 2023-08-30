@@ -60,7 +60,7 @@
 
 <style>
   #hero {
-    background-image: url("/assets/img/home/sliders/shutterstock_686604058.webp");
+    background-image: url("/assets/img/home/sliders/header-bg-min.webp");
     background-size: cover;
   }
   @media (max-width: 768px) {

@@ -32,12 +32,7 @@
                 <a href="/ru/dubai/off-plan-projects/canal-front-residences">
                   <div class="icon-box">
                     <div class="offplan-pro-container">
-                      <img
-                        alt="drvn"
-                        src="/assets/images/1Canal_Front_Residences_Page_08_Image_0001 Resized 1800x1200.jpg
-"
-                        class="img-fluid w-100 offplan-pro-img"
-                      />
+                      <img alt="drvn" src="/assets/images/canical-front.webp" class="img-fluid w-100 offplan-pro-img" />
                       <div class="offplan-pro-title">
                         <div>Canal Front Residences</div>
                         <strong>Al Wasl</strong>
@@ -51,7 +46,7 @@
                   <div class="icon-box">
                     <div class="offplan-pro-container">
                       <!-- <img alt="drvn" src="/assets/images/offplan11.jpg" class="img-fluid w-100 offplan-pro-img" /> -->
-                      <img alt="drvn" src="/assets/images/2wveafv-min.jpg" class="img-fluid w-100 offplan-pro-img" />
+                      <img alt="drvn" src="/assets/images/2wveafv-min.webp" class="img-fluid w-100 offplan-pro-img" />
                       <div class="offplan-pro-title">
                         <div>Port De La Mer</div>
                         <strong>Jumeirah</strong>
@@ -64,7 +59,7 @@
                 <a href="/ru/dubai/off-plan-projects/laurel-city-walk">
                   <div class="icon-box">
                     <div class="offplan-pro-container">
-                      <img alt="drvn" src="/assets/images/3MqrtL5idqgye9BRXV0HY9BnvJsx8HFUocy1LYgTs-min.jpg" class="img-fluid w-100 offplan-pro-img" />
+                      <img alt="drvn" src="/assets/images/3MqrtL5idqgye9BRXV0HY9BnvJsx8HFUocy1LYgTs-min.webp" class="img-fluid w-100 offplan-pro-img" />
                       <div class="offplan-pro-title">
                         <div>Laurel Central Park City Walk</div>
                         <strong>Citywalk</strong>
@@ -85,12 +80,7 @@
           <a href="/ru/dubai/off-plan-projects/canal-front-residences">
             <div class="icon-box">
               <div class="offplan-pro-container">
-                <img
-                  alt="drvn"
-                  src="/assets/images/1Canal_Front_Residences_Page_08_Image_0001 Resized 1800x1200.jpg
-"
-                  class="img-fluid w-100 offplan-pro-img"
-                />
+                <img alt="drvn" src="/assets/images/canical-front.webp" class="img-fluid w-100 offplan-pro-img" />
                 <div class="offplan-pro-title">
                   <div>Canal Front Residences</div>
                   <strong>Al Wasl</strong>
@@ -103,7 +93,7 @@
           <a href="/ru/dubai/off-plan-projects/port-de-la-mer">
             <div class="icon-box">
               <div class="offplan-pro-container">
-                <img alt="drvn" src="/assets/images/2wveafv-min.jpg" class="img-fluid w-100 offplan-pro-img" />
+                <img alt="drvn" src="/assets/images/2wveafv-min.webp" class="img-fluid w-100 offplan-pro-img" />
                 <div class="offplan-pro-title">
                   <div>Port De La Mer</div>
                   <strong>Jumeirah</strong>
@@ -116,7 +106,7 @@
           <a href="/ru/dubai/off-plan-projects/laurel-city-walk">
             <div class="icon-box">
               <div class="offplan-pro-container">
-                <img alt="drvn" src="/assets/images/3MqrtL5idqgye9BRXV0HY9BnvJsx8HFUocy1LYgTs-min.jpg" class="img-fluid w-100 offplan-pro-img" />
+                <img alt="drvn" src="/assets/images/3MqrtL5idqgye9BRXV0HY9BnvJsx8HFUocy1LYgTs-min.webp" class="img-fluid w-100 offplan-pro-img" />
                 <div class="offplan-pro-title">
                   <div>Laurel Central Park City Walk</div>
                   <strong>Citywalk</strong>

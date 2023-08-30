@@ -31,7 +31,7 @@
                       and guide you with ever...
                     </div>
                     <div class="testimonial-client-info">
-                      <div class="client-img"><img alt="drvn" src="/assets/images/t1.jpg" class="testimonial-pro-img" /></div>
+                      <div class="client-img"><img alt="drvn" src="/assets/images/t1.webp" class="testimonial-pro-img" /></div>
                       <div class="client-name">Lina Allaoa</div>
                     </div>
                   </div>
@@ -45,7 +45,7 @@
                       his help whole of...
                     </div>
                     <div class="testimonial-client-info">
-                      <div class="client-img"><img alt="drvn" src="/assets/images/t2.jpg" class="testimonial-pro-img" /></div>
+                      <div class="client-img"><img alt="drvn" src="/assets/images/t2.webp" class="testimonial-pro-img" /></div>
                       <div class="client-name">Raj Deo Singh</div>
                     </div>
                   </div>
@@ -59,7 +59,7 @@
                       and ensured that the i...
                     </div>
                     <div class="testimonial-client-info">
-                      <div class="client-img"><img alt="drvn" src="/assets/images/t3.jpg" class="testimonial-pro-img" /></div>
+                      <div class="client-img"><img alt="drvn" src="/assets/images/t3.webp" class="testimonial-pro-img" /></div>
                       <div class="client-name">Leila Shugri</div>
                     </div>
                   </div>
@@ -79,7 +79,7 @@
                 guide you with ever...
               </div>
               <div class="testimonial-client-info">
-                <div class="client-img"><img alt="drvn" src="/assets/images/t1.jpg" class="testimonial-pro-img" /></div>
+                <div class="client-img"><img alt="drvn" src="/assets/images/t1.webp" class="testimonial-pro-img" /></div>
                 <div class="client-name">Lina Allaoa</div>
               </div>
             </div>
@@ -93,7 +93,7 @@
                 help whole of...
               </div>
               <div class="testimonial-client-info">
-                <div class="client-img"><img alt="drvn" src="/assets/images/t2.jpg" class="testimonial-pro-img" /></div>
+                <div class="client-img"><img alt="drvn" src="/assets/images/t2.webp" class="testimonial-pro-img" /></div>
                 <div class="client-name">Raj Deo Singh</div>
               </div>
             </div>
@@ -107,7 +107,7 @@
                 ensured that the i...
               </div>
               <div class="testimonial-client-info">
-                <div class="client-img"><img alt="drvn" src="/assets/images/t3.jpg" class="testimonial-pro-img" /></div>
+                <div class="client-img"><img alt="drvn" src="/assets/images/t3.webp" class="testimonial-pro-img" /></div>
                 <div class="client-name">Leila Shugri</div>
               </div>
             </div>
