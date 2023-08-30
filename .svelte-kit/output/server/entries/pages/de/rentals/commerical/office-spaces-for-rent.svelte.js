@@ -1,0 +1,3 @@
+import{c as e,v as o}from"../../../../../immutable/chunks/index-7b7abb97.js";import{C as r}from"../../../../../immutable/chunks/ContentByPageFr-9238e218.js";import"../../../../../immutable/chunks/stores-73de46f1.js";import"../../../../../immutable/chunks/LeadFormLeft-5af0d071.js";import"../../../../../immutable/chunks/breadcrumb-635bf2b4.js";import"../../../../../immutable/chunks/helpers-b1dcc375.js";const $=e((t,a,n,i)=>`${t.head+=`${t.title="<title>Sales - Buy Ready Properties Listing</title>",""}<meta name="description" content="About Us Page app" data-svelte="svelte-wm6v9b">`,""}
+    
+    ${o(r,"ContentByPageFr").$$render(t,{},{},{})}`);export{$ as default};

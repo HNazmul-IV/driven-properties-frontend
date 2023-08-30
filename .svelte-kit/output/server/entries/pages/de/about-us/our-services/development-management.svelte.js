@@ -1,0 +1,3 @@
+import{c as e,v as o}from"../../../../../immutable/chunks/index-7b7abb97.js";import{D as a}from"../../../../../immutable/chunks/Dev-Managment-64f22536.js";import"../../../../../immutable/chunks/stores-73de46f1.js";import"../../../../../immutable/chunks/LeadFormLeft-23e146c1.js";/* empty css                                                                           *//* empty css                                                                                  */const v=e((t,n,m,p)=>`${t.head+=`${t.title="<title>About Us</title>",""}<meta name="description" content="About Us Page app" data-svelte="svelte-xpl071">`,""}
+    
+    ${o(a,"AboutDevelopmentManagement").$$render(t,{},{},{})}`);export{v as default};
