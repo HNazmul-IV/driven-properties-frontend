@@ -3,18 +3,12 @@
   import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import { Tabs, Tab, TabList, TabPanel } from "svelte-tabs";
-  // import HeaderSearchForm from '../search.svelte';
-  // import HeaderSearchForm from './header.svelte';
   import BannerSearchForm from "../banner-search-form.svelte";
   import { baseURL } from "../../../../base-url";
   import BannerSearchFormMob from "./banner-search-form-mob.svelte";
-  import LeadFormLeft from "$lib/ru/commons/LeadFormLeft.svelte";
+  // import LeadFormLeft from "$lib/ru/commons/LeadFormLeft.svelte";
 
   let HeaderMenus = [];
-  let pageName = "rent-apartments";
-  let level = 0;
-  let parent = 0;
-  let activeaccordion = true;
   let Noarrow = [11, 17, 18, 19, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79];
   let DropdownActive = false;
   let SbDropdownActive = false;
@@ -26,10 +20,10 @@
   let MyActiveLinks = "/" + MyActiveLink[3];
   let searchData = "";
   let isNavOpen = false;
-  let removeLangPath;
   let isHomeRu = false;
   let isDynamicListPage = false;
   let expired;
+  let LeadFormLeft;
 
   let isShow = true;
   let isMobile = false;
@@ -66,7 +60,10 @@
   });
 
   onMount(async () => {
-    // set cache lifetime in seconds
+    LeadFormLeft = (await import("$lib/ru/commons/LeadFormLeft.svelte")).default;
+  });
+
+  onMount(async () => {
     const cachelife = 5000;
 
     //get cached data from local storage
@@ -147,8 +144,6 @@
   };
 
   const onBannerForm = () => {};
-
-  $: MyWhatsapp = WBSettings.whatsapp;
 </script>
 
 <!-- ======= Header ======= -->
@@ -158,24 +153,6 @@
     <a data-sveltekit-prefetch href="/" class="logo me-auto">
       <img alt="drvn" src="/assets/images/Driven-Forbes-05-1024x269.png" class="img-fluid" />
     </a>
-
-    <!-- <div class="d-inline-flex justify-content-start">
-      <div class="offcanvas offcanvas-top" id="s-demo">
-        <div class="offcanvas-header">
-          <button type="button" class="btn-close close-btn" data-bs-dismiss="offcanvas" />
-        </div>
-        <div class="offcanvas-body container">
-          <Tabs>
-            <TabList>
-              <Tab>à vendre</Tab>
-              <Tab>a louer</Tab>
-            </TabList>
-            <TabPanel />
-            <TabPanel />
-          </Tabs>
-        </div>
-      </div>
-    </div> -->
 
     <nav id="navbar" class="navbar {isNavOpen && !isMobile ? 'navbar-mobile' : ''}">
       <ul class="navbar-ul">
@@ -245,6 +222,7 @@
         <li id="languageSwitcherRussia" class="nav-item dropdown px-3 px-lg-0 desk-lang">
           <img alt="france-flag" src="/assets/images/germany-flag.png" class="img-fluid" />
         </li>
+
         <li id="social-container">
           <div class="d-flex flex-row justify-content-around social p-3 bd-highlight">
             <div class="p-0 bd-highlight">
@@ -263,6 +241,7 @@
             <!-- {/if} -->
             {#if !isHomeRu}
               <div class="p-0 bd-highlight">
+                <!-- svelte-ignore a11y-invalid-attribute -->
                 <a data-sveltekit-prefetch href="#" on:click={formToggle} class="whatsapp text-center form-icon form-open">
                   <!-- <i class="bi bi-envelope {!isShow? 'envelop-clicked':''}"></i> -->
                   <i class="bi bi-card-text {!isShow ? 'envelop-clicked' : ''}" />
@@ -310,7 +289,6 @@
             <BannerSearchFormMob status={"Offplan"} on:frmOnChanges={onBannerForm} />
           </TabPanel>
         </Tabs>
-        <!-- <BannerSearchFormMob /> -->
       </div>
     </div>
   {/if}
@@ -402,11 +380,6 @@
     font-size: 30px;
     color: white;
   }
-  #lang img,
-  #languageSwitcher img {
-    height: 15px;
-    margin: 5px;
-  }
   li#languageSwitcherRussia img {
     border-radius: 100% !important;
     height: 30px !important;
@@ -445,22 +418,11 @@
     z-index: 11;
   }
 
-  /* li.dropdown a span{
-        text-transform: lowercase;
-    }
-    li.dropdown a span::first-letter{
-        text-transform: capitalize;
-    } */
   @media (min-width: 769px) {
     .navbar .dropdown ul {
       padding: 10px 10px;
     }
-    .bd-social-icons a {
-      margin: 0;
-      padding-left: 0 !important;
-    }
-    .bd-social-icons a .FSbx,
-    .bd-social-icons a .bi-envelope::before {
+    .bd-social-icons a .FSbx {
       font-size: 1.2em !important;
     }
     li.dropdown a {
@@ -482,9 +444,6 @@
     ul li.dropdown,
     li.dropdown li {
       border-top: 1px solid #efefef;
-    }
-    li#languageSwitcher {
-      border-top: 1px solid;
     }
     #social-container .social {
       background: #ccc;

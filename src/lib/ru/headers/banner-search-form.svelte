@@ -3,7 +3,6 @@
     import { goto } from '$app/navigation';
     import { baseURL } from '../../../base-url';
 
-    let dispatch = createEventDispatcher();
     let searchKey=[];
     let expired;
     let searchedKeyArray=[], searchedKey=[];
@@ -44,7 +43,6 @@
     }
 
     const handleClick = () => {
-        console.log(inputValue, status);
         if(status === 'Sale'){
             goto(`/de/properties-for-sale/${inputValue.replace(/\s+/g, "-").toLowerCase()}/any/any/0-150000000`);
         }else if(status === 'Rent'){

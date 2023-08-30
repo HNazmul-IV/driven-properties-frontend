@@ -1,10 +1,9 @@
 <script>
-  import { onMount, afterUpdate } from "svelte";
-  import { page } from "$app/stores";
+  import { onMount } from "svelte";
 
   import { baseURL } from "../base-url";
 
-  import HomeClients from "$lib/ru/includes/home/client.svelte";
+  // import HomeClients from "$lib/ru/includes/home/client.svelte";
   import OffPlanProjects from "$lib/ru/includes/home/offplanprojects.svelte";
   import LuxuryProjects from "$lib/ru/includes/home/luxuryproperties.svelte";
   import SaleRentProperties from "$lib/ru/includes/home/salerentproperties.svelte";
@@ -12,11 +11,27 @@
   import HomeMap from "$lib/ru/includes/home/homemap.svelte";
   import HomeFactNumbers from "$lib/ru/includes/home/factnumbers.svelte";
   import HomeTestimonials from "$lib/ru/includes/home/hometestimonials.svelte";
-  import Slider from "$lib/ru/headers/slider.svelte";
+  // import Slider from "$lib/ru/headers/slider.svelte";
+
+  let HomeClients;
+  // let OffPlanProjects;
+  // let LuxuryProjects;
+  // let SaleRentProperties;
+  // let HomeServices;
+  // let HomeMap;
+  // let HomeFactNumbers;
+  // let HomeTestimonials;
+  let Slider;
 
   let pageContent = [];
   let FactNumbers = [];
   let expired;
+
+  // dynamic import
+  onMount(async () => {
+    HomeClients = (await import("$lib/ru/includes/home/client.svelte")).default;
+    Slider = (await import("$lib/ru/headers/slider.svelte")).default;
+  });
 
   onMount(async () => {
     // set cache lifetime in seconds
@@ -45,8 +60,9 @@
     const response3 = await fetch(`${baseURL}/getHomeAllFactNumbers`);
     const data3 = await response3.json();
     FactNumbers = data3;
-    //FactNumbers API End
   });
+
+  onMount(() => {});
 </script>
 
 <svelte:head>
@@ -57,9 +73,8 @@
   />
 </svelte:head>
 
-<Slider />
-
-<HomeClients />
+<svelte:component this={Slider} />
+<svelte:component this={HomeClients} />
 
 <OffPlanProjects />
 <LuxuryProjects />

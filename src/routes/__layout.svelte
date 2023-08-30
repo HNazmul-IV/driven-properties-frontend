@@ -8,10 +8,10 @@
 
   let WBSettings = [];
   let expired;
+  // let Header;
 
   onMount(async () => {
-    
-    // set cache lifetime in seconds
+    // set cache lifetime in seconds.
     const cacheLife = 5000;
 
     //get cached data from local storage
@@ -33,6 +33,8 @@
       localStorage.setItem("getWBSetings", JSON.stringify(json));
     }
   });
+
+  // });
 </script>
 
 <main id="main">
